@@ -1,30 +1,38 @@
 <template>
   <div>
-    <h2>Cadastro de Usuário</h2>
+    <h2 class="subtitle">Cadastro de Usuário</h2>
     <form>
-      <div class="linha_form">
-        <label for="email">Email</label>&nbsp;
-        <input type="text" id="email" v-model="email" @blur="verifica_email()" @click="limpar_correcao_email()">
+      <div class="field">
+        <label class="label"  for="email">Email</label>
+        <div class="control">
+          <input type="text" id="email" v-model="email" @blur="verifica_email()" @click="limpar_correcao_email()">
+        </div>
         <div style="color: red;">{{ correcao_email }}</div>
       </div>
-      <div class="linha_form">
-        <label for="nome">Nome</label>&nbsp; 
-        <input type="text" id="nome" v-model="nome" @blur="verifica_nome()" @click="limpar_correcao_nome()">
+      <div class="field">
+        <label class="label"  for="nome">Nome</label> 
+        <div class="control">
+          <input type="text" id="nome" v-model="nome" @blur="verifica_nome()" @click="limpar_correcao_nome()">
+        </div>
         <div style="color: red;">{{ correcao_nome }}</div>
       </div>
-      <div class="linha_form">
-        <label for="senha">Senha</label>&nbsp; 
-        <input type="password" id="senha" v-model="senha" @blur="verifica_senha()" @click="limpar_correcao_senha()">
+      <div class="field">
+        <label class="label"  for="senha">Senha</label>
+        <div class="control">
+          <input type="password" id="senha" v-model="senha" @blur="verifica_senha()" @click="limpar_correcao_senha()">
+        </div>
         <div style="color: red;">{{ correcao_senha }}</div>
       </div>
-      <div class="linha_form">
-        <label for="confirmacao_senha">Confirmação Senha</label>&nbsp; 
-        <input type="password" id="confirmacao_senha" v-model="confirmacao_senha" @blur="verifica_confirmacao_senha()" @click="limpar_correcao_confirmacao_senha()">
+      <div class="field">
+        <label class="label"  for="confirmacao_senha">Confirmação Senha</label> 
+        <div class="control">
+          <input type="password" id="confirmacao_senha" v-model="confirmacao_senha" @blur="verifica_confirmacao_senha()" @click="limpar_correcao_confirmacao_senha()">
+        </div>
         <div style="color: red;">{{ correcao_confirmacao_senha }}</div>
       </div>
       <div class="linha_form">
-        <input type="reset" value="Limpar">&nbsp;
-        <input type="button" value="Enviar" @click="enviar()"><br>
+        <input type="reset" class="button is-warning" value="Limpar">&nbsp;
+        <input type="button" value="Enviar"  class="button is-warning" @click="enviar()"><br>
         <router-link to="/">Voltar para Login</router-link>
       </div>
     </form>

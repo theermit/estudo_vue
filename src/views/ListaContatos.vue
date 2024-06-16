@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h2>Relação de contatos</h2>
+        <h2 class="subtitle">Relação de contatos</h2>
         <p><strong>Usuário:</strong> {{nome_usuario}}</p>
-        <p><button type="button" @click="ir_incluir_contato()">Incluir Contato</button></p>
-        <table>
+        <p class="subtitle"><button type="button" @click="ir_incluir_contato()">Incluir Contato</button></p>
+        <table class="table is-bordered is-fullwidth">
             <thead>
                 <tr>
                     <th>Nome</th>
@@ -16,13 +16,13 @@
                     <td>{{contato.nome}}</td>
                     <td>{{contato.telefone}}</td>
                     <td>
-                        <button type="button" @click="modificar_contato(index)">Modificar</button>
-                        <button type="button" @click="apagar_contato(index)">Apagar</button>
+                        <button class="button is-warning" type="button" @click="modificar_contato(index)">Modificar</button>&nbsp;
+                        <button class="button is-warning"  type="button" @click="apagar_contato(index)">Apagar</button>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <p><button type="button" @click="sair()">Sair</button></p>
+        <p><button type="button"  class="button is-warning"  @click="sair()">Sair</button></p>
     </div>
 </template>
 <script>
@@ -84,12 +84,5 @@ import { api } from '@/services/api';
   }
 </script>
 <style>
-table{
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-}
-th, td{
-    border: 1px solid gray;
-}
+
 </style>

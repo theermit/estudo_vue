@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <h1>Agenda Telefônica</h1>
-    <!--
-      <router-link to="/">Home</router-link> 
-    -->
-    <router-view/>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Agenda Telefônica</h1>
+        <router-view/>
+      </div>
+    </section>
   </div>
 </template>
 

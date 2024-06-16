@@ -1,19 +1,24 @@
 <template>
   <div>
-    <h2>Login</h2>
+    <h2 class="subtitle">Login</h2>
     <form>
-      <div class="linha_form">
-        <label for="email">Email</label>&nbsp;
-        <input type="text" v-model="email" id="email" maxlength="255" @click="limpar_correcao_email()" @blur="verifica_email()">
+      <div class="field">
+        <label class="label" for="email">Email</label>
+        <div class="control">
+          <input type="text" v-model="email" id="email" maxlength="255" @click="limpar_correcao_email()" @blur="verifica_email()">
+        </div>
+        
         <div style="color: red;">{{ correcao_email }}</div>
       </div>
-      <div class="linha_form">
-        <label for="senha">Senha</label>&nbsp; 
-        <input type="password" v-model="senha" id="senha" maxlength="8" @blur="verifica_senha()" @click="limpar_correcao_senha()">
+      <div class="field">
+        <label class="label"  for="senha">Senha</label> 
+        <div class="control">
+          <input type="password" v-model="senha" id="senha" maxlength="8" @blur="verifica_senha()" @click="limpar_correcao_senha()">
+        </div>
       </div>
-      <div class="linha_form">
-        <input type="reset" value="Limpar">
-        <input type="button" value="Enviar" @click="enviar()">
+      <div class="field">
+        <input type="reset" class="button is-warning" value="Limpar"> &nbsp;
+        <input type="button" class="button is-warning"  value="Enviar" @click="enviar()">
       </div>
       <router-link to="/cadastro">Não possui login? Cadastre-se.</router-link>
     </form>
@@ -72,7 +77,7 @@
             if(resposta.status == 200)
             {
               window.localStorage.logado = true;
-              window.localStorage.token = resposta.data.jwt_hash;
+              window.localStorage.token = resposta.data.token;
               this.$router.push('/listacontatos');
             }
             else 
